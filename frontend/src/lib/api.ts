@@ -5,7 +5,12 @@ export const API_URL =
 
 export const api = axios.create({
   baseURL: API_URL,
-  headers: { 'Content-Type': 'application/json' },
+  headers: {
+    'Content-Type': 'application/json',
+    // Skip ngrok's free-tier browser-warning interstitial so API calls
+    // receive JSON instead of an HTML warning page.
+    'ngrok-skip-browser-warning': 'true',
+  },
 })
 
 // --- Shared types ----------------------------------------------------------
