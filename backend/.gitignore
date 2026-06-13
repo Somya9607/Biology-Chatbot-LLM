@@ -1,0 +1,10 @@
+.venv/
+.venv-test/
+qdrant_storage/
+qdrant_storage_test/
+__pycache__/
+*.pyc
+logs/*.jsonl
+fingerprints/*.json
+.pytest_cache/
+.env

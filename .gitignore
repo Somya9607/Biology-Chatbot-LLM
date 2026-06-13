@@ -1,0 +1,33 @@
+# ===== Python / backend =====
+backend/.venv/
+backend/.venv-test/
+**/__pycache__/
+*.pyc
+.pytest_cache/
+backend/.env
+
+# Embedded Qdrant data (regenerated locally)
+backend/qdrant_storage/
+backend/qdrant_storage_test/
+
+# Runtime artifacts
+backend/logs/*.jsonl
+backend/fingerprints/*.json
+
+# ===== PDFs (too large for GitHub: 100MB/file limit, 2GB+ total) =====
+# Do NOT commit the corpus. Keep code only; document where to add PDFs.
+backend/pdfs/*.pdf
+# Keep the small generated demo samples OUT too (regenerate with the script):
+backend/sample_pdfs/*.pdf
+
+# ===== Node / frontend =====
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env.local
+*.tsbuildinfo
+frontend/next-env.d.ts
+
+# ===== Misc =====
+.DS_Store
+Thumbs.db
