@@ -52,6 +52,8 @@ async def health_ocr() -> dict:
     try:
         import pytesseract
 
+        if settings.TESSERACT_CMD:
+            pytesseract.pytesseract.tesseract_cmd = settings.TESSERACT_CMD
         version = str(pytesseract.get_tesseract_version())
         return {"status": "ok", "tesseract_version": version, "message": "ok"}
     except Exception as exc:  # noqa: BLE001

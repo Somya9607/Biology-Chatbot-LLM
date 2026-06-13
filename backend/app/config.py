@@ -33,6 +33,12 @@ class Settings(BaseSettings):
     QDRANT_PORT: int = 6333
     QDRANT_COLLECTION: str = "biology_rag"
 
+    # --- OCR -----------------------------------------------------------------
+    # Absolute path to the Tesseract binary. Leave empty to rely on PATH.
+    # On Windows the UB-Mannheim build installs to:
+    #   C:\Program Files\Tesseract-OCR\tesseract.exe
+    TESSERACT_CMD: str = ""
+
     # --- Models --------------------------------------------------------------
     EMBEDDING_MODEL: str = "BAAI/bge-small-en-v1.5"
     RERANKER_MODEL: str = "cross-encoder/ms-marco-MiniLM-L-6-v2"

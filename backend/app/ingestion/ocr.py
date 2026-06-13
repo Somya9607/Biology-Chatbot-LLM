@@ -23,9 +23,15 @@ import fitz  # PyMuPDF
 import pytesseract
 from PIL import Image
 
+from app.config import settings
 from app.logger import get_logger
 
 log = get_logger(__name__)
+
+# Point pytesseract at an explicit binary if configured (Windows installs are
+# often not on PATH). Applied once at import.
+if settings.TESSERACT_CMD:
+    pytesseract.pytesseract.tesseract_cmd = settings.TESSERACT_CMD
 
 # If at least this fraction of pages are scanned, prefer full-document OCRmyPDF.
 FULL_OCR_THRESHOLD = 0.5
